@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
-
+int gcd(int a, int b){
+	if(a == 0){
+		return b;
+	}
+	if(b == 0){
+		return a;
+	}
+}
 int main(){
-	long long n, ans;
-	cin >> n;
-	long long a[n];
-	a[0] = 0;
-	a[1] = 1;
+	int a, b;
+   cin >> a >> b;
 
-	for(int  i = 2; i <= n; i++){
-		a[i] = a[i - 1] + a[i-2];
-		ans = a[i];
-	}
+   if(a >= b){
+   	cout << gcd(a%b, b);
+   }
+   else if (a <= b){
+   	cout << gcd(a, b %a);
+   }
 
-	if(n <= 1){
-		cout << n;
-	}
-	else {
-		cout << ans; //% 10;
-	}
 }
